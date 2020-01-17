@@ -21,14 +21,29 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
+plugins {
+    id "com.github.ben-manes.versions" version "0.27.0"
+}
 allprojects {
     repositories {
         google()
         jcenter()
     }
 }
-
+def isNonStable = { String version ->
+    def stableKeyword = [
+            'RELEASE', 'FINAL', 'GA'
+    ].any { it -> version.toUpperCase().contains(it) }
+    def regex = /^[0-9,.v-]+(-r)?$/
+    return !stableKeyword && !(version ==~ regex)
+}
+subprojects {
+    dependencyUpdates {
+        rejectVersionIf {
+            isNonStable(it.candidate.version)
+        }
+    }
+}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
