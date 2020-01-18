@@ -52,6 +52,12 @@ dependencies {
     // AndroidX layout libraries.
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
 
+    // Timber logging library.
+    implementation "com.jakewharton.timber:timber:${versions.timber}"
+
+    // LeakCanary memory leak detection library
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:${versions.leakCanary}"
+
     // Testing libraries.
     testImplementation "junit:junit:${versions.junit}"
 
