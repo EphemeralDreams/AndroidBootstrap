@@ -1,4 +1,15 @@
 buildscript {
+    ext {
+        getGitCommitHash = {
+            return 'git rev-parse --short HEAD'.execute().text.trim()
+        }
+        getGitDescribeTag = {
+            return 'git describe --tags'.execute().text.trim()
+        }
+        getGitTag = {
+            return 'git describe --tags --abbrev=0'.execute().text.trim()
+        }
+    }
     ext.versions = [
             'androidTools'    : '3.5.3',
             'androidX'        : '1.1.0',
