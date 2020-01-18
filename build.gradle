@@ -4,10 +4,10 @@ buildscript {
             return 'git rev-parse --short HEAD'.execute().text.trim()
         }
         getGitDescribeTag = {
-            return 'git describe --tags'.execute().text.trim()
+            return 'git describe --tags'.execute().text.trim() ?: '0.1.0'
         }
         getGitTag = {
-            return 'git describe --tags --abbrev=0'.execute().text.trim()
+            return 'git describe --tags --abbrev=0'.execute().text.trim() ?: '0.1.0'
         }
     }
     ext.versions = [

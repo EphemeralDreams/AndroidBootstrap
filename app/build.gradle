@@ -15,7 +15,7 @@ android {
     }
     buildTypes.all {
         it.buildConfigField('String', 'GIT_COMMIT_HASH', "\"${getGitCommitHash()}\"")
-        it.buildConfigField('String', 'GIT_DESCRIBE_TAG', "\"${getGitDescribeTag}\"")
+        it.buildConfigField('String', 'GIT_DESCRIBE_TAG', "\"${getGitDescribeTag()}\"")
         it.buildConfigField('String', 'GIT_TAG', "\"${getGitTag()}\"")
     }
     buildTypes {
