@@ -3,20 +3,21 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion buildVersions.compileSdk
+    buildToolsVersion buildVersions.buildTools
     defaultConfig {
         applicationId "com.ephemeraldreams.androidbootstrap"
-        minSdkVersion 23
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion buildVersions.minSdk
+        targetSdkVersion buildVersions.targetSdk
+        versionCode getGitCommitCount("master")
+        versionName getGitDescribeTag()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        archivesBaseName = "${rootProject.name}-${versionName}-${versionCode}"
     }
     buildTypes.all {
+        it.buildConfigField('String', 'GIT_BRANCH', "\"${getGitBranch()}\"")
         it.buildConfigField('String', 'GIT_COMMIT_HASH', "\"${getGitCommitHash()}\"")
         it.buildConfigField('String', 'GIT_DESCRIBE_TAG', "\"${getGitDescribeTag()}\"")
-        it.buildConfigField('String', 'GIT_TAG', "\"${getGitTag()}\"")
     }
     buildTypes {
         debug {
