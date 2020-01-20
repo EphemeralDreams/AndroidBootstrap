@@ -9,15 +9,10 @@ android {
         applicationId "com.ephemeraldreams.androidbootstrap"
         minSdkVersion buildVersions.minSdk
         targetSdkVersion buildVersions.targetSdk
-        versionCode getGitCommitCount("master")
-        versionName getGitDescribeTag()
+        versionCode 1
+        versionName "0.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         archivesBaseName = "${rootProject.name}-${versionName}-${versionCode}"
-    }
-    buildTypes.all {
-        it.buildConfigField('String', 'GIT_BRANCH', "\"${getGitBranch()}\"")
-        it.buildConfigField('String', 'GIT_COMMIT_HASH', "\"${getGitCommitHash()}\"")
-        it.buildConfigField('String', 'GIT_DESCRIBE_TAG', "\"${getGitDescribeTag()}\"")
     }
     buildTypes {
         debug {
