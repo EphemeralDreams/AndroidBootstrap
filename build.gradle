@@ -1,12 +1,4 @@
 buildscript {
-    ext {
-        getGitBranch = { return "git rev-parse --abbrev-ref HEAD".execute().text.trim() }
-        getGitCommitCount = { branch = "HEAD" ->
-            return "git rev-list --count ${branch}".execute().text.trim() as Integer
-        }
-        getGitCommitHash = { return "git rev-parse --short HEAD".execute().text.trim() }
-        getGitDescribeTag = { return "git describe --tags".execute().text.trim() ?: '0.1.0' }
-    }
     ext.buildVersions = [
             'androidGradle': '3.5.3',
             'buildTools'   : '29.0.2',
