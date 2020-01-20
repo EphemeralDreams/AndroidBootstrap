@@ -1,14 +1,17 @@
+import com.ephemeraldreams.Deps
+import com.ephemeraldreams.Versions
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion buildVersions.compileSdk
-    buildToolsVersion buildVersions.buildTools
+    compileSdkVersion(Versions.compileSdk)
+    buildToolsVersion(Versions.buildTools)
     defaultConfig {
         applicationId "com.ephemeraldreams.androidbootstrap"
-        minSdkVersion buildVersions.minSdk
-        targetSdkVersion buildVersions.targetSdk
+        minSdkVersion(Versions.minSdk)
+        targetSdkVersion(Versions.targetSdk)
         versionCode 1
         versionName "0.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -36,28 +39,30 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Kotlin libraries.
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
-    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}"
+    implementation(Deps.Kotlin.Stdlib)
+    implementation(Deps.Kotlin.Reflect)
+    implementation(Deps.Kotlin.Coroutines.Core)
+    implementation(Deps.Kotlin.Coroutines.Android)
+    testImplementation(Deps.Kotlin.TestJunit)
+    testImplementation(Deps.Kotlin.Coroutines.Test)
 
     // AndroidX core libraries.
-    implementation "androidx.appcompat:appcompat:${versions.androidX}"
-    implementation "androidx.core:core-ktx:${versions.androidX}"
+    implementation(Deps.AndroidX.AppCompat)
+    implementation(Deps.AndroidX.CoreKotlin)
 
     // AndroidX layout libraries.
-    implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+    implementation(Deps.AndroidX.ConstraintLayout)
 
     // Timber logging library.
-    implementation "com.jakewharton.timber:timber:${versions.timber}"
+    implementation(Deps.Timber)
 
     // LeakCanary memory leak detection library
-    debugImplementation "com.squareup.leakcanary:leakcanary-android:${versions.leakCanary}"
+    debugImplementation(Deps.Square.LeakCanary)
 
     // Testing libraries.
-    testImplementation "junit:junit:${versions.junit}"
+    testImplementation(Deps.Junit)
 
     // AndroidX testing libraries.
-    androidTestImplementation "androidx.test.ext:junit:${versions.androidXJunit}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
+    androidTestImplementation(Deps.AndroidX.Test.Junit)
+    androidTestImplementation(Deps.AndroidX.Test.Espresso.Core)
 }
