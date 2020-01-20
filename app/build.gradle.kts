@@ -1,34 +1,36 @@
 import com.ephemeraldreams.Deps
 import com.ephemeraldreams.Versions
 
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id("com.android.application")
+    kotlin("android")
+    kotlin("android.extensions")
+}
 
 android {
     compileSdkVersion(Versions.compileSdk)
     buildToolsVersion(Versions.buildTools)
     defaultConfig {
-        applicationId "com.ephemeraldreams.androidbootstrap"
+        applicationId = "com.ephemeraldreams.androidbootstrap"
         minSdkVersion(Versions.minSdk)
         targetSdkVersion(Versions.targetSdk)
-        versionCode 1
-        versionName "0.1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        archivesBaseName = "${rootProject.name}-${versionName}-${versionCode}"
+        versionCode = 1
+        versionName = "0.1.0"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        setProperty("archivesBaseName", "${rootProject.name}-${versionName}")
     }
     buildTypes {
-        debug {
-            applicationIdSuffix ".debug"
+        getByName("debug") {
+            applicationIdSuffix = ".debug"
         }
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        getByName("release") {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        setSourceCompatibility(JavaVersion.VERSION_1_8)
+        setTargetCompatibility(JavaVersion.VERSION_1_8)
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -36,7 +38,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     // Kotlin libraries.
     implementation(Deps.Kotlin.Stdlib)
