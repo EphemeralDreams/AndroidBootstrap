@@ -10,11 +10,7 @@ object Versions {
     const val klint = "0.36.0"
 }
 
-object Deps {
-
-    object Android {
-        const val Gradle = "com.android.tools.build:gradle:3.5.3"
-    }
+object Dependencies {
 
     object AndroidX {
         private const val version = "1.1.0"
@@ -35,11 +31,10 @@ object Deps {
     const val Junit = "junit:junit:4.12"
 
     object Kotlin {
-        private const val version = "1.3.61"
-        const val Stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
-        const val Reflect = "org.jetbrains.kotlin:kotlin-reflect:$version"
-        const val GradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
-        const val TestJunit = "org.jetbrains.kotlin:kotlin-test-junit:$version"
+
+        const val StdlibJDK8 = "stdlib-jdk8"
+        const val Test = "test"
+        const val TestJunit = "test-junit"
 
         object Coroutines {
             private const val version = "1.3.3"
