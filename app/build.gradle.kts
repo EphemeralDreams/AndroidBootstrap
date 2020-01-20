@@ -1,4 +1,4 @@
-import com.ephemeraldreams.Deps
+import com.ephemeraldreams.Dependencies
 import com.ephemeraldreams.Versions
 
 plugins {
@@ -41,30 +41,30 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     // Kotlin libraries.
-    implementation(Deps.Kotlin.Stdlib)
-    implementation(Deps.Kotlin.Reflect)
-    implementation(Deps.Kotlin.Coroutines.Core)
-    implementation(Deps.Kotlin.Coroutines.Android)
-    testImplementation(Deps.Kotlin.TestJunit)
-    testImplementation(Deps.Kotlin.Coroutines.Test)
+    implementation(kotlin(Dependencies.Kotlin.StdlibJDK8))
+    testImplementation(kotlin(Dependencies.Kotlin.Test))
+    testImplementation(kotlin(Dependencies.Kotlin.TestJunit))
+    implementation(Dependencies.Kotlin.Coroutines.Core)
+    implementation(Dependencies.Kotlin.Coroutines.Android)
+    testImplementation(Dependencies.Kotlin.Coroutines.Test)
 
     // AndroidX core libraries.
-    implementation(Deps.AndroidX.AppCompat)
-    implementation(Deps.AndroidX.CoreKotlin)
+    implementation(Dependencies.AndroidX.AppCompat)
+    implementation(Dependencies.AndroidX.CoreKotlin)
 
     // AndroidX layout libraries.
-    implementation(Deps.AndroidX.ConstraintLayout)
+    implementation(Dependencies.AndroidX.ConstraintLayout)
 
     // Timber logging library.
-    implementation(Deps.Timber)
+    implementation(Dependencies.Timber)
 
     // LeakCanary memory leak detection library
-    debugImplementation(Deps.Square.LeakCanary)
+    debugImplementation(Dependencies.Square.LeakCanary)
 
     // Testing libraries.
-    testImplementation(Deps.Junit)
+    testImplementation(Dependencies.Junit)
 
     // AndroidX testing libraries.
-    androidTestImplementation(Deps.AndroidX.Test.Junit)
-    androidTestImplementation(Deps.AndroidX.Test.Espresso.Core)
+    androidTestImplementation(Dependencies.AndroidX.Test.Junit)
+    androidTestImplementation(Dependencies.AndroidX.Test.Espresso.Core)
 }
