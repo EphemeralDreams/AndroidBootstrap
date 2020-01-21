@@ -44,4 +44,8 @@ spotless {
         target("**/*.kt")
         ktlint(Versions.klint)
     }
+    kotlinGradle {
+        target("**/*.kts")
+        ktlint(Versions.klint)
+    }
 }

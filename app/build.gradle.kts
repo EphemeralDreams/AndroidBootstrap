@@ -17,7 +17,7 @@ android {
         versionCode = 1
         versionName = "0.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        setProperty("archivesBaseName", "${rootProject.name}-${versionName}")
+        setProperty("archivesBaseName", "${rootProject.name}-$versionName")
     }
     buildTypes {
         getByName("debug") {
