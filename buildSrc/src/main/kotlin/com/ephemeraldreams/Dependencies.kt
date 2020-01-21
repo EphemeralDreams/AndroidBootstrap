@@ -28,6 +28,7 @@ object Dependencies {
 
     object AndroidX {
         private const val version = "1.1.0"
+        const val ActivityKotlin = "androidx.activity:activity-ktx:1.0.0"
         const val AppCompat = "androidx.appcompat:appcompat:$version"
         const val CoreKotlin = "androidx.core:core-ktx:$version"
         const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
@@ -45,7 +46,6 @@ object Dependencies {
     const val Junit = "junit:junit:4.12"
 
     object Kotlin {
-
         const val StdlibJDK8 = "stdlib-jdk8"
         const val Test = "test"
         const val TestJunit = "test-junit"

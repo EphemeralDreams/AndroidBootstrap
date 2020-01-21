@@ -50,6 +50,7 @@ dependencies {
 
     // AndroidX core libraries.
     implementation(Dependencies.AndroidX.AppCompat)
+    implementation(Dependencies.AndroidX.ActivityKotlin)
     implementation(Dependencies.AndroidX.CoreKotlin)
 
     // AndroidX layout libraries.
