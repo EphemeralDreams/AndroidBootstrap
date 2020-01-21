@@ -1,5 +1,7 @@
 package com.ephemeraldreams
 
+import java.util.Locale
+
 object Versions {
     const val buildTools = "29.0.2"
     const val compileSdk = 29
@@ -8,6 +10,18 @@ object Versions {
 
     const val googleJavaFormat = "1.7"
     const val klint = "0.36.0"
+
+    /**
+     * Check whether [version] is not a stable version.
+     */
+    fun isNonStable(version: String): Boolean {
+        val stableKeyword = listOf("RELEASE", "FINAL", "GA").any {
+            version.toUpperCase(Locale.ROOT).contains(it)
+        }
+        val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+        val isStable = stableKeyword || regex.matches(version)
+        return isStable.not()
+    }
 }
 
 object Dependencies {
