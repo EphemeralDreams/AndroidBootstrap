@@ -8,4 +8,4 @@ gradleEnterprise {
     }
 }
 include(":app")
-rootProject.name="AndroidBootstrap"
+rootProject.name = "AndroidBootstrap"
