@@ -20,10 +20,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Build debug variant
+      - name: Build and test debug variant
         run: ./gradlew assembleDebug bundleDebug testDebug --scan
 
-      - name: Build release variant
+      - name: Build and test release variant
         run: ./gradlew assembleRelease bundleRelease testRelease --scan
 
       - name: Check code style and lint
