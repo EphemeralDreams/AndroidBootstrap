@@ -10,7 +10,7 @@ import okhttp3.logging.HttpLoggingInterceptor.Logger
 import timber.log.Timber
 
 @Module
-class NetworkModule {
+object NetworkModule {
 
     @Provides @Singleton
     fun providesOkHttpClient(): OkHttpClient {
