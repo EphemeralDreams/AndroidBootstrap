@@ -5,6 +5,7 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
+    kotlin("kapt")
 }
 
 android {
@@ -55,6 +56,17 @@ dependencies {
 
     // AndroidX layout libraries.
     implementation(Dependencies.AndroidX.ConstraintLayout)
+
+    // Dagger dependency injection library.
+    implementation(Dependencies.Google.Dagger.Dagger)
+    implementation(Dependencies.Google.Dagger.AndroidSupport)
+    kapt(Dependencies.Google.Dagger.Compiler)
+    kapt(Dependencies.Google.Dagger.AndroidProcessor)
+
+    // OkHttp networking library.
+    implementation(Dependencies.Square.OkHttp.OkHttp)
+    implementation(Dependencies.Square.OkHttp.LoggingInterceptor)
+    implementation(Dependencies.Square.OkHttp.MockWebServer)
 
     // Timber logging library.
     implementation(Dependencies.Timber)

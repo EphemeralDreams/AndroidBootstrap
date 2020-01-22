@@ -43,6 +43,16 @@ object Dependencies {
         }
     }
 
+    object Google {
+        object Dagger {
+            private const val version = "2.25.4"
+            const val Dagger = "com.google.dagger:dagger:$version"
+            const val Compiler = "com.google.dagger:dagger-compiler:$version"
+            const val AndroidSupport = "com.google.dagger:dagger-android-support:$version"
+            const val AndroidProcessor = "com.google.dagger:dagger-android-processor:$version"
+        }
+    }
+
     const val Junit = "junit:junit:4.12"
 
     object Kotlin {
@@ -60,6 +70,13 @@ object Dependencies {
 
     object Square {
         const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:2.1"
+
+        object OkHttp {
+            private const val version = "4.3.1"
+            const val OkHttp = "com.squareup.okhttp3:okhttp:$version"
+            const val LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$version"
+            const val MockWebServer = "com.squareup.okhttp3:mockwebserver:$version"
+        }
     }
 
     const val Timber = "com.jakewharton.timber:timber:4.7.1"
