@@ -28,7 +28,7 @@ object Dependencies {
 
     object AndroidX {
         private const val version = "1.1.0"
-        const val ActivityKotlin = "androidx.activity:activity-ktx:1.0.0"
+        const val ActivityKotlin = "androidx.activity:activity-ktx:$version"
         const val AppCompat = "androidx.appcompat:appcompat:$version"
         const val CoreKotlin = "androidx.core:core-ktx:$version"
         const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
