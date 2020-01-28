@@ -71,11 +71,24 @@ object Dependencies {
     object Square {
         const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:2.1"
 
+        object Moshi {
+            private const val version = "1.9.2"
+            const val Moshi = "com.squareup.moshi:moshi:$version"
+            const val MoshiKotlin = "com.squareup.moshi:moshi-kotlin:$version"
+            const val MoshiKotlinCodegen = "com.squareup.moshi:moshi-kotlin-codegen:$version"
+        }
+
         object OkHttp {
             private const val version = "4.3.1"
             const val OkHttp = "com.squareup.okhttp3:okhttp:$version"
             const val LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$version"
             const val MockWebServer = "com.squareup.okhttp3:mockwebserver:$version"
+        }
+
+        object Retrofit {
+            private const val version = "2.7.1"
+            const val Retrofit = "com.squareup.retrofit2:retrofit:$version"
+            const val ConverterMoshi = "com.squareup.retrofit2:converter-moshi:$version"
         }
     }
 

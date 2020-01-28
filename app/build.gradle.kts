@@ -63,10 +63,19 @@ dependencies {
     kapt(Dependencies.Google.Dagger.Compiler)
     kapt(Dependencies.Google.Dagger.AndroidProcessor)
 
+    // Moshi JSON library.
+    implementation(Dependencies.Square.Moshi.Moshi)
+    implementation(Dependencies.Square.Moshi.MoshiKotlin)
+    kapt(Dependencies.Square.Moshi.MoshiKotlinCodegen)
+
     // OkHttp networking library.
     implementation(Dependencies.Square.OkHttp.OkHttp)
     implementation(Dependencies.Square.OkHttp.LoggingInterceptor)
     implementation(Dependencies.Square.OkHttp.MockWebServer)
+
+    // Retrofit REST API client library.
+    implementation(Dependencies.Square.Retrofit.Retrofit)
+    implementation(Dependencies.Square.Retrofit.ConverterMoshi)
 
     // Timber logging library.
     implementation(Dependencies.Timber)
