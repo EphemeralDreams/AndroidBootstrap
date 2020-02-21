@@ -64,6 +64,7 @@ dependencies {
     kapt(Dependencies.Google.Dagger.AndroidProcessor)
 
     // OkHttp networking library.
+    implementation(platform(Dependencies.Square.OkHttp.Bom))
     implementation(Dependencies.Square.OkHttp.OkHttp)
     implementation(Dependencies.Square.OkHttp.LoggingInterceptor)
     implementation(Dependencies.Square.OkHttp.MockWebServer)
