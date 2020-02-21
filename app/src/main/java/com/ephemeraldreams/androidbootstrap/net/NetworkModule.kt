@@ -12,17 +12,32 @@ import timber.log.Timber
 @Module
 object NetworkModule {
 
-    @Provides @Singleton
-    fun providesOkHttpClient(): OkHttpClient {
-        val loggingInterceptor = HttpLoggingInterceptor(object : Logger {
+    @Provides
+    @Singleton
+    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
+        val httpLoggingInterceptor = HttpLoggingInterceptor(object : Logger {
             override fun log(message: String) {
                 if (BuildConfig.DEBUG) {
                     Timber.tag("OkHttp").d(message)
                 }
             }
         })
-        return OkHttpClient.Builder()
-            .addInterceptor(loggingInterceptor)
-            .build()
+        if (BuildConfig.DEBUG) {
+            httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BASIC
+        } else {
+            httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.NONE
+        }
+        httpLoggingInterceptor.apply {
+            redactHeader("Authorization")
+            redactHeader("Cookie")
+        }
+        return httpLoggingInterceptor
     }
+
+    @Provides
+    @Singleton
+    fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
+        OkHttpClient.Builder()
+            .addInterceptor(httpLoggingInterceptor)
+            .build()
 }
