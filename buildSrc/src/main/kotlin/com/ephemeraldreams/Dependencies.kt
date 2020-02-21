@@ -73,9 +73,10 @@ object Dependencies {
 
         object OkHttp {
             private const val version = "4.4.0"
-            const val OkHttp = "com.squareup.okhttp3:okhttp:$version"
-            const val LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$version"
-            const val MockWebServer = "com.squareup.okhttp3:mockwebserver:$version"
+            const val Bom = "com.squareup.okhttp3:okhttp-bom:$version"
+            const val OkHttp = "com.squareup.okhttp3:okhttp"
+            const val LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor"
+            const val MockWebServer = "com.squareup.okhttp3:mockwebserver"
         }
     }
 
