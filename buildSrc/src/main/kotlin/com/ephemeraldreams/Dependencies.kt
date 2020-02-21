@@ -53,7 +53,7 @@ object Dependencies {
 
     object Google {
         object Dagger {
-            private const val version = "2.25.4"
+            private const val version = "2.26"
             const val Dagger = "com.google.dagger:dagger:$version"
             const val Compiler = "com.google.dagger:dagger-compiler:$version"
             const val AndroidSupport = "com.google.dagger:dagger-android-support:$version"

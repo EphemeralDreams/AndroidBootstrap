@@ -2,13 +2,9 @@ package com.ephemeraldreams.androidbootstrap
 
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
-import javax.inject.Inject
-import okhttp3.OkHttpClient
 import timber.log.Timber
 
 class BootstrapApplication : DaggerApplication() {
-
-    @Inject lateinit var okHttpClient: OkHttpClient
 
     override fun onCreate() {
         super.onCreate()

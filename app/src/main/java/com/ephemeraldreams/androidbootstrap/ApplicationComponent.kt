@@ -1,6 +1,7 @@
 package com.ephemeraldreams.androidbootstrap
 
-import com.ephemeraldreams.androidbootstrap.net.NetworkModule
+import com.ephemeraldreams.androidbootstrap.di.DataModule
+import com.ephemeraldreams.androidbootstrap.di.NetworkModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -12,6 +13,7 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         ApplicationModule::class,
+        DataModule::class,
         NetworkModule::class
     ]
 )
