@@ -34,6 +34,7 @@ object Dependencies {
         const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
         const val FragmentKotlin = "androidx.fragment:fragment-ktx:$version"
         const val Material = "com.google.android.material:material:1.1.0"
+        const val ViewPager2 = "androidx.viewpager2:viewpager2:1.0.0"
 
         object Lifecycle {
             private const val version = "2.2.0"

@@ -59,9 +59,10 @@ dependencies {
     implementation(Dependencies.AndroidX.Lifecycle.ViewModelKotlin)
     implementation(Dependencies.AndroidX.Lifecycle.ViewModelSavedState)
 
-    // AndroidX layout libraries.
+    // AndroidX UI and layout libraries.
     implementation(Dependencies.AndroidX.ConstraintLayout)
     implementation(Dependencies.AndroidX.Material)
+    implementation(Dependencies.AndroidX.ViewPager2)
 
     // Dagger dependency injection library.
     implementation(Dependencies.Google.Dagger.Dagger)
