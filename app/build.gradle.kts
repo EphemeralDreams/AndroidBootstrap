@@ -53,9 +53,15 @@ dependencies {
     implementation(Dependencies.AndroidX.AppCompat)
     implementation(Dependencies.AndroidX.ActivityKotlin)
     implementation(Dependencies.AndroidX.CoreKotlin)
+    implementation(Dependencies.AndroidX.FragmentKotlin)
+    implementation(Dependencies.AndroidX.Lifecycle.CommonJava8)
+    implementation(Dependencies.AndroidX.Lifecycle.LiveDataKotlin)
+    implementation(Dependencies.AndroidX.Lifecycle.ViewModelKotlin)
+    implementation(Dependencies.AndroidX.Lifecycle.ViewModelSavedState)
 
     // AndroidX layout libraries.
     implementation(Dependencies.AndroidX.ConstraintLayout)
+    implementation(Dependencies.AndroidX.Material)
 
     // Dagger dependency injection library.
     implementation(Dependencies.Google.Dagger.Dagger)
