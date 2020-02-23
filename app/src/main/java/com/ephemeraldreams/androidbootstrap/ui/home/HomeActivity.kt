@@ -1,20 +1,20 @@
 package com.ephemeraldreams.androidbootstrap.ui.home
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.ephemeraldreams.androidbootstrap.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.android.support.DaggerAppCompatActivity
 
-private val TAB_TITLES = arrayOf(
-    R.string.tab_text_1,
-    R.string.tab_text_2
-)
+class HomeActivity : DaggerAppCompatActivity() {
 
-class HomeActivity : AppCompatActivity() {
+    private val TAB_TITLES = arrayOf(
+        R.string.tab_text_1,
+        R.string.tab_text_2
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

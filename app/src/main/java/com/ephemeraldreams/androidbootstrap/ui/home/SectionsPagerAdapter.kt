@@ -5,7 +5,6 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.ephemeraldreams.androidbootstrap.ui.placeholder.PlaceholderFragment
 
-
 /**
  * A [FragmentStateAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.

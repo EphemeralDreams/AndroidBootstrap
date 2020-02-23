@@ -1,7 +1,9 @@
 package com.ephemeraldreams.androidbootstrap
 
+import android.app.Application
 import android.content.Context
 import com.ephemeraldreams.androidbootstrap.annotations.ApplicationId
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -13,4 +15,11 @@ object ApplicationModule {
 
     @Provides @ApplicationId
     fun provideApplicationId(application: BootstrapApplication): String = application.packageName
+}
+
+@Module
+abstract class ApplicationModuleBinders {
+
+    @Binds
+    abstract fun provideApplication(bind: BootstrapApplication): Application
 }

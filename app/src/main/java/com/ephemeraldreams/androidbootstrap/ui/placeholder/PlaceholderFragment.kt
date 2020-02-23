@@ -5,17 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.ephemeraldreams.androidbootstrap.R
+import com.ephemeraldreams.androidbootstrap.annotations.ApplicationId
 import com.ephemeraldreams.androidbootstrap.ui.home.PageViewModel
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
+import timber.log.Timber
 
 /**
  * A placeholder fragment containing a simple view.
  */
-class PlaceholderFragment : Fragment() {
+class PlaceholderFragment : DaggerFragment() {
 
+    @Inject @ApplicationId lateinit var applicationId: String
     private val pageViewModel: PageViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +27,7 @@ class PlaceholderFragment : Fragment() {
         pageViewModel.apply {
             setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 1)
         }
+        Timber.d("Application ID: %s", applicationId)
     }
 
     override fun onCreateView(
