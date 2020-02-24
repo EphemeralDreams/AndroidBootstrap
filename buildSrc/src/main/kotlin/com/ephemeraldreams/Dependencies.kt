@@ -27,21 +27,23 @@ object Versions {
 object Dependencies {
 
     object AndroidX {
-        private const val version = "1.1.0"
-        const val ActivityKotlin = "androidx.activity:activity-ktx:$version"
-        const val AppCompat = "androidx.appcompat:appcompat:$version"
-        const val CoreKotlin = "androidx.core:core-ktx:1.2.0"
-        const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
-        const val FragmentKotlin = "androidx.fragment:fragment-ktx:$version"
-        const val Material = "com.google.android.material:material:1.1.0"
-        const val ViewPager2 = "androidx.viewpager2:viewpager2:1.0.0"
+        const val AppCompat = "androidx.appcompat:appcompat:1.1.0"
+        const val CommonJava8 = "androidx.lifecycle:lifecycle-common-java8:2.2.0"
+        const val ViewModelSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
 
-        object Lifecycle {
-            private const val version = "2.2.0"
-            const val LiveDataKotlin = "androidx.lifecycle:lifecycle-livedata-ktx:$version"
-            const val ViewModelKotlin = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
-            const val ViewModelSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:$version"
-            const val CommonJava8 = "androidx.lifecycle:lifecycle-common-java8:$version"
+        object KTX {
+            const val Activity = "androidx.activity:activity-ktx:1.1.0"
+            const val Collection = "androidx.collection:collection-ktx:1.1.0"
+            const val Core = "androidx.core:core-ktx:1.2.0"
+            const val Fragment = "androidx.fragment:fragment-ktx:1.2.2"
+            const val LiveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+            const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+        }
+
+        object UI {
+            const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
+            const val Material = "com.google.android.material:material:1.1.0"
+            const val ViewPager2 = "androidx.viewpager2:viewpager2:1.0.0"
         }
 
         object Test {
