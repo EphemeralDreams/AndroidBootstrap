@@ -63,6 +63,7 @@ dependencies {
     implementation(Dependencies.AndroidX.KTX.Core)
     implementation(Dependencies.AndroidX.KTX.Fragment)
     implementation(Dependencies.AndroidX.KTX.LiveData)
+    implementation(Dependencies.AndroidX.KTX.Preference)
     implementation(Dependencies.AndroidX.KTX.ViewModel)
 
     // AndroidX UI and layout libraries.

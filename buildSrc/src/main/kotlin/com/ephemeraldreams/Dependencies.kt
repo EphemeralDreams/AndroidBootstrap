@@ -37,6 +37,7 @@ object Dependencies {
             const val Core = "androidx.core:core-ktx:1.2.0"
             const val Fragment = "androidx.fragment:fragment-ktx:1.2.2"
             const val LiveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+            const val Preference = "androidx.preference:preference-ktx:1.1.0"
             const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
         }
 
