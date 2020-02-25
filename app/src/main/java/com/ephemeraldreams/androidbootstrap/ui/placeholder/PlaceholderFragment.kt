@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.ephemeraldreams.androidbootstrap.R
 import com.ephemeraldreams.androidbootstrap.annotations.ApplicationId
+import com.ephemeraldreams.androidbootstrap.databinding.FragmentHomeBinding
 import com.ephemeraldreams.androidbootstrap.ui.home.PageViewModel
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
@@ -35,12 +34,11 @@ class PlaceholderFragment : DaggerFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.section_label)
+        val binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         pageViewModel.text.observe(viewLifecycleOwner, Observer<String> {
-            textView.text = it
+            binding.sectionLabelTextView.text = it
         })
-        return root
+        return binding.root
     }
 
     companion object {

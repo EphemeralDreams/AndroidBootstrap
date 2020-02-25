@@ -7,7 +7,7 @@
     tools:context="com.ephemeraldreams.androidbootstrap.ui.placeholder.PlaceholderFragment">
 
     <TextView
-        android:id="@+id/section_label"
+        android:id="@+id/section_label_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
