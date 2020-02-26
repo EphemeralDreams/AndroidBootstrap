@@ -1,16 +1,65 @@
 name: Continuous Integration (CI)
 on: [push]
+env:
+  JAVA_VERSION: 1.8
 jobs:
-  build:
+  validate:
+    name: Validate Gradle wrapper
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Set up JDK 1.8
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
+
+  code_style:
+    name: Check code style
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: Check code style
+        run: ./gradlew spotlessCheck --scan
+
+  check_dependencies:
+    name: Check for dependency updates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: Check dependency updates
+        run: ./gradlew dependencyUpdates --scan
+
+      - name: Upload dependency updates report
+        uses: actions/upload-artifact@v1
+        with:
+          name: dependency-updates
+          path: build/dependencyUpdates
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
 
       - name: Generate cache key
         run: ./checksum.sh checksum.txt
@@ -29,8 +78,8 @@ jobs:
       - name: Build and test release variant
         run: ./gradlew assembleRelease bundleRelease testRelease --scan
 
-      - name: Check code style and lint
-        run: ./gradlew spotlessCheck lint --scan
+      - name: Check lint
+        run: ./gradlew lint --scan
 
       - name: Upload build output files
         if: always()
@@ -45,12 +94,3 @@ jobs:
         with:
           name: build-reports
           path: app/build/reports
-
-      - name: Check dependency updates
-        run: ./gradlew dependencyUpdates --scan
-
-      - name: Upload dependency updates report
-        uses: actions/upload-artifact@v1
-        with:
-          name: dependency-updates
-          path: build/dependencyUpdates
