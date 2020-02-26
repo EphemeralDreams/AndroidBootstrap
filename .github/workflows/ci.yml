@@ -4,7 +4,7 @@ env:
   JAVA_VERSION: 1.8
 jobs:
   validate:
-    name: Validate Gradle wrapper
+    name: Gradle Wrapper Validation
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -14,7 +14,7 @@ jobs:
         uses: gradle/wrapper-validation-action@v1
 
   code_style:
-    name: Check code style
+    name: Code Style Check
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -29,7 +29,7 @@ jobs:
         run: ./gradlew spotlessCheck --scan
 
   check_dependencies:
-    name: Check for dependency updates
+    name: Dependency Updates
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -50,7 +50,7 @@ jobs:
           path: build/dependencyUpdates
 
   build:
-    name: Build
+    name: Build Tests
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
