@@ -55,12 +55,3 @@ jobs:
         with:
           name: build-reports
           path: app/build/reports
-
-      - name: Check dependency updates
-        run: ./gradlew dependencyUpdates --scan
-
-      - name: Upload dependency updates report
-        uses: actions/upload-artifact@v1
-        with:
-          name: dependency-updates
-          path: build/dependencyUpdates
