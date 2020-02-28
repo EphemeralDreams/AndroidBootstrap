@@ -10,7 +10,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:3.5.3")
+        classpath("com.android.tools.build:gradle:3.6.0")
         classpath(kotlin("gradle-plugin", "1.3.61"))
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -18,7 +18,7 @@ buildscript {
 }
 plugins {
     id("com.diffplug.gradle.spotless") version "3.27.1"
-    id("com.github.ben-manes.versions") version "0.27.0"
+    id("com.github.ben-manes.versions") version "0.28.0"
 }
 allprojects {
     repositories {

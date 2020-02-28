@@ -53,7 +53,7 @@ object Dependencies {
         }
     }
 
-    const val Junit = "junit:junit:4.12"
+    const val Junit = "junit:junit:4.13"
 
     object Kotlin {
         const val StdlibJDK8 = "stdlib-jdk8"
