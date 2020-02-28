@@ -28,14 +28,23 @@ object Dependencies {
 
     object AndroidX {
         const val AppCompat = "androidx.appcompat:appcompat:1.1.0"
+        const val CommonJava8 = "androidx.lifecycle:lifecycle-common-java8:2.2.0"
+        const val ViewModelSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
 
         object KTX {
             const val Activity = "androidx.activity:activity-ktx:1.1.0"
+            const val Collection = "androidx.collection:collection-ktx:1.1.0"
             const val Core = "androidx.core:core-ktx:1.2.0"
+            const val Fragment = "androidx.fragment:fragment-ktx:1.2.2"
+            const val LiveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+            const val Preference = "androidx.preference:preference-ktx:1.1.0"
+            const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
         }
 
         object UI {
             const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
+            const val Material = "com.google.android.material:material:1.1.0"
+            const val ViewPager2 = "androidx.viewpager2:viewpager2:1.0.0"
         }
 
         object Test {
