@@ -30,8 +30,8 @@ android {
         }
     }
     compileOptions {
-        setSourceCompatibility(JavaVersion.VERSION_1_8)
-        setTargetCompatibility(JavaVersion.VERSION_1_8)
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -51,11 +51,13 @@ dependencies {
 
     // AndroidX core libraries.
     implementation(Dependencies.AndroidX.AppCompat)
-    implementation(Dependencies.AndroidX.ActivityKotlin)
-    implementation(Dependencies.AndroidX.CoreKotlin)
 
-    // AndroidX layout libraries.
-    implementation(Dependencies.AndroidX.ConstraintLayout)
+    // AndroidX Kotlin Extension libraries.
+    implementation(Dependencies.AndroidX.KTX.Activity)
+    implementation(Dependencies.AndroidX.KTX.Core)
+
+    // AndroidX UI and layout libraries.
+    implementation(Dependencies.AndroidX.UI.ConstraintLayout)
 
     // Dagger dependency injection library.
     implementation(Dependencies.Google.Dagger.Dagger)
