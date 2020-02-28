@@ -1,7 +1,17 @@
 name: Continuous Integration (CI)
 on: [push]
 jobs:
+  validate:
+    name: Gradle Wrapper Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -16,7 +26,7 @@ jobs:
         run: ./checksum.sh checksum.txt
 
       - name: Cache gradle modules
-        uses: actions/cache@v1
+        uses: actions/cache@v1.1.2
         with:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('checksum.txt') }}
