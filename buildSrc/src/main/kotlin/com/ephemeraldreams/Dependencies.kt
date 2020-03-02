@@ -41,6 +41,14 @@ object Dependencies {
             const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
         }
 
+        object Room {
+            private const val version = "2.2.4"
+            const val Runtime = "androidx.room:room-runtime:$version"
+            const val KTX = "androidx.room:room-ktx:$version"
+            const val Compiler = "androidx.room:room-compiler:$version"
+            const val Test = "androidx.room:room-testing:$version"
+        }
+
         object UI {
             const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
             const val Material = "com.google.android.material:material:1.1.0"

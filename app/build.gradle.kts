@@ -68,6 +68,12 @@ dependencies {
     implementation(Dependencies.AndroidX.UI.Material)
     implementation(Dependencies.AndroidX.UI.ViewPager2)
 
+    // AndroidX Room persistence library.
+    implementation(Dependencies.AndroidX.Room.Runtime)
+    implementation(Dependencies.AndroidX.Room.KTX)
+    kapt(Dependencies.AndroidX.Room.Compiler)
+    androidTestImplementation(Dependencies.AndroidX.Room.Test)
+
     // Dagger dependency injection library.
     implementation(Dependencies.Google.Dagger.Dagger)
     implementation(Dependencies.Google.Dagger.AndroidSupport)
