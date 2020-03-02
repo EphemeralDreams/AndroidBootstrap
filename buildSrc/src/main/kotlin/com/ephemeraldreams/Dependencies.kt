@@ -57,10 +57,17 @@ object Dependencies {
 
         object Test {
             const val Junit = "androidx.test.ext:junit:1.1.1"
+            const val Rules = "androidx.test:rules:1.2.0"
+            const val Runner = "androidx.test:runner:1.2.0"
 
             object Espresso {
                 private const val version = "3.2.0"
+                const val Accessibility = "androidx.test.espresso:espresso-accessibility:$version"
+                const val Contrib = "androidx.test.espresso:espresso-contrib:$version"
                 const val Core = "androidx.test.espresso:espresso-core:$version"
+                const val Idling = "androidx.test.espresso.idling:idling-concurrent:$version"
+                const val Intents = "androidx.test.espresso:espresso-intents:$version"
+                const val Web = "androidx.test.espresso:espresso-web:$version"
             }
         }
     }

@@ -106,5 +106,12 @@ dependencies {
 
     // AndroidX testing libraries.
     androidTestImplementation(Dependencies.AndroidX.Test.Junit)
+    androidTestImplementation(Dependencies.AndroidX.Test.Rules)
+    androidTestImplementation(Dependencies.AndroidX.Test.Runner)
+    androidTestImplementation(Dependencies.AndroidX.Test.Espresso.Accessibility)
+    androidTestImplementation(Dependencies.AndroidX.Test.Espresso.Contrib)
     androidTestImplementation(Dependencies.AndroidX.Test.Espresso.Core)
+    androidTestImplementation(Dependencies.AndroidX.Test.Espresso.Idling)
+    androidTestImplementation(Dependencies.AndroidX.Test.Espresso.Intents)
+    androidTestImplementation(Dependencies.AndroidX.Test.Espresso.Web)
 }
