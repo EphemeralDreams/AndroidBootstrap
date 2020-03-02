@@ -89,7 +89,7 @@ dependencies {
     implementation(platform(Dependencies.Square.OkHttp.Bom))
     implementation(Dependencies.Square.OkHttp.OkHttp)
     implementation(Dependencies.Square.OkHttp.LoggingInterceptor)
-    implementation(Dependencies.Square.OkHttp.MockWebServer)
+    testImplementation(Dependencies.Square.OkHttp.MockWebServer)
 
     // Retrofit REST API client library.
     implementation(Dependencies.Square.Retrofit.Retrofit)
