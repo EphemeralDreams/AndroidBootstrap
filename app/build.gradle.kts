@@ -36,6 +36,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    lintOptions {
+        isCheckDependencies = true
+        isCheckGeneratedSources = true
+    }
     viewBinding {
         isEnabled = true
     }
