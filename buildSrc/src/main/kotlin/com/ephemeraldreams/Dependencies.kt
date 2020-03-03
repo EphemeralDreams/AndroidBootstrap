@@ -3,7 +3,7 @@ package com.ephemeraldreams
 import java.util.Locale
 
 object Versions {
-    const val buildTools = "29.0.2"
+    const val buildTools = "29.0.3"
     const val compileSdk = 29
     const val minSdk = 23
     const val targetSdk = 29
