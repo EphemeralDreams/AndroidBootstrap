@@ -93,7 +93,7 @@ object Dependencies {
         const val TestJunit = "test-junit"
 
         object Coroutines {
-            private const val version = "1.3.3"
+            private const val version = "1.3.4"
             const val Core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
             const val Android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
             const val Test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
