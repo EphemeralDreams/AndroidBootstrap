@@ -59,6 +59,7 @@ object Dependencies {
             const val Junit = "androidx.test.ext:junit:1.1.1"
             const val Rules = "androidx.test:rules:1.2.0"
             const val Runner = "androidx.test:runner:1.2.0"
+            const val Truth = "androidx.test.ext:truth:1.2.0"
 
             object Espresso {
                 private const val version = "3.2.0"
@@ -80,6 +81,8 @@ object Dependencies {
             const val AndroidSupport = "com.google.dagger:dagger-android-support:$version"
             const val AndroidProcessor = "com.google.dagger:dagger-android-processor:$version"
         }
+
+        const val Truth = "com.google.truth:truth:1.0.1"
     }
 
     const val Junit = "junit:junit:4.13"
