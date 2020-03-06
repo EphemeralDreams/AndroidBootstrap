@@ -1,6 +1,6 @@
 package com.ephemeraldreams.androidbootstrap
 
-import kotlin.test.assertEquals
+import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
 /**
@@ -11,6 +11,7 @@ import org.junit.Test
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        val result = 2 + 2
+        assertThat(result).isEqualTo(4)
     }
 }

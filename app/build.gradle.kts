@@ -110,11 +110,14 @@ dependencies {
 
     // Testing libraries.
     testImplementation(Dependencies.Junit)
+    testImplementation(Dependencies.Google.Truth)
+    androidTestImplementation(Dependencies.Google.Truth)
 
     // AndroidX testing libraries.
     androidTestImplementation(Dependencies.AndroidX.Test.Junit)
     androidTestImplementation(Dependencies.AndroidX.Test.Rules)
     androidTestImplementation(Dependencies.AndroidX.Test.Runner)
+    androidTestImplementation(Dependencies.AndroidX.Test.Truth)
     androidTestImplementation(Dependencies.AndroidX.Test.Espresso.Accessibility)
     androidTestImplementation(Dependencies.AndroidX.Test.Espresso.Contrib)
     androidTestImplementation(Dependencies.AndroidX.Test.Espresso.Core)
