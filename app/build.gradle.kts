@@ -73,13 +73,22 @@ dependencies {
     // AndroidX UI and layout libraries.
     implementation(Dependencies.AndroidX.UI.ConstraintLayout)
     implementation(Dependencies.AndroidX.UI.Material)
+    implementation(Dependencies.AndroidX.UI.SwipeRefreshLayout)
     implementation(Dependencies.AndroidX.UI.ViewPager2)
+
+    // AndroidX Paging library.
+    implementation(Dependencies.AndroidX.Paging.RuntimeKtx)
+    testImplementation(Dependencies.AndroidX.Paging.CommonKtx)
 
     // AndroidX Room persistence library.
     implementation(Dependencies.AndroidX.Room.Runtime)
     implementation(Dependencies.AndroidX.Room.KTX)
     kapt(Dependencies.AndroidX.Room.Compiler)
     androidTestImplementation(Dependencies.AndroidX.Room.Test)
+
+    // AndroidX WorkManager library.
+    implementation(Dependencies.AndroidX.Work.RuntimeKtx)
+    androidTestImplementation(Dependencies.AndroidX.Work.Test)
 
     // Dagger dependency injection library.
     implementation(Dependencies.Google.Dagger.Dagger)
