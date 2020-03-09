@@ -41,6 +41,12 @@ object Dependencies {
             const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
         }
 
+        object Paging {
+            private const val version = "2.1.1"
+            const val RuntimeKtx = "androidx.paging:paging-runtime-ktx:$version"
+            const val CommonKtx = "androidx.paging:paging-common-ktx:$version"
+        }
+
         object Room {
             private const val version = "2.2.4"
             const val Runtime = "androidx.room:room-runtime:$version"
@@ -52,7 +58,14 @@ object Dependencies {
         object UI {
             const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
             const val Material = "com.google.android.material:material:1.1.0"
+            const val SwipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
             const val ViewPager2 = "androidx.viewpager2:viewpager2:1.0.0"
+        }
+
+        object Work {
+            private const val version = "2.3.3"
+            const val RuntimeKtx = "androidx.work:work-runtime-ktx:$version"
+            const val Test = "androidx.work:work-testing:$version"
         }
 
         object Test {
