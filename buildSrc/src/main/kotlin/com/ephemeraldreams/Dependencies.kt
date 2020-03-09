@@ -111,7 +111,7 @@ object Dependencies {
         }
 
         object OkHttp {
-            private const val version = "4.4.0"
+            private const val version = "4.4.1"
             const val Bom = "com.squareup.okhttp3:okhttp-bom:$version"
             const val OkHttp = "com.squareup.okhttp3:okhttp"
             const val LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor"
@@ -119,7 +119,7 @@ object Dependencies {
         }
 
         object Retrofit {
-            private const val version = "2.7.1"
+            private const val version = "2.7.2"
             const val Retrofit = "com.squareup.retrofit2:retrofit:$version"
             const val ConverterMoshi = "com.squareup.retrofit2:converter-moshi:$version"
         }
