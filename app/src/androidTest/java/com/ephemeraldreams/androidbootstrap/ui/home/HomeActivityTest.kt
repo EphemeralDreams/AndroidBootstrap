@@ -23,7 +23,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class HomeActivityTest {
 
-    @get:Rule var homeActivityRule = IntentsTestRule(HomeActivity::class.java)
+    @Rule @JvmField var homeActivityRule = IntentsTestRule(HomeActivity::class.java)
 
     @Test
     fun initializeHomeActivity() {
