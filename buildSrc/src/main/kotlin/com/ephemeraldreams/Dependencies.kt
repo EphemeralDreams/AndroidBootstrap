@@ -95,6 +95,8 @@ object Dependencies {
             const val AndroidProcessor = "com.google.dagger:dagger-android-processor:$version"
         }
 
+        const val PlayServicesOssLicenses = "com.google.android.gms:play-services-oss-licenses:17.0.0"
+
         const val Truth = "com.google.truth:truth:1.0.1"
     }
 

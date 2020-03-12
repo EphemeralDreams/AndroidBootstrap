@@ -3,6 +3,7 @@ import com.ephemeraldreams.Versions
 
 plugins {
     id("com.android.application")
+    id("com.google.android.gms.oss-licenses-plugin")
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
@@ -89,6 +90,9 @@ dependencies {
     // AndroidX WorkManager library.
     implementation(Dependencies.AndroidX.Work.RuntimeKtx)
     androidTestImplementation(Dependencies.AndroidX.Work.Test)
+
+    // OSS licenses display library.
+    implementation(Dependencies.Google.PlayServicesOssLicenses)
 
     // Dagger dependency injection library.
     implementation(Dependencies.Google.Dagger.Dagger)

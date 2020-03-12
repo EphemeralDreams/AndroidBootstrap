@@ -8,4 +8,8 @@
         app:title="Send feedback"
         app:summary="Report technical issues or suggest new features" />
 
+    <Preference
+        app:key="@string/preference_key_oss_licenses"
+        app:title="@string/oss_license_title" />
+
 </PreferenceScreen>
