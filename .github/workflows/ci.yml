@@ -1,7 +1,7 @@
 name: Continuous Integration (CI)
 on: [push]
 jobs:
-  validate:
+  wrapper-validation:
     name: Gradle Wrapper Validation
     runs-on: ubuntu-latest
     steps:
@@ -10,12 +10,9 @@ jobs:
 
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@v1
-  build:
-    name: Build
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+  build-tests:
+    name: Build Tests
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
@@ -39,13 +36,6 @@ jobs:
       - name: Build and test
         run: ./gradlew assemble bundle lint test --scan
 
-      - name: Run instrumented tests
-        if: runner.os == 'macOS'
-        uses: reactivecircus/android-emulator-runner@v2.5.0
-        with:
-          api-level: 29
-          script: ./gradlew connectedCheck --scan
-
       - name: Check code style
         run: ./gradlew spotlessCheck --scan
 
@@ -53,12 +43,54 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v1
         with:
-          name: build-outputs-${{ runner.os }}
+          name: build-outputs
           path: app/build/outputs
 
       - name: Upload build report files
         if: always()
         uses: actions/upload-artifact@v1
         with:
-          name: build-reports-${{ runner.os }}
+          name: build-reports
+          path: app/build/reports
+  instrumented-tests:
+    name: Instrumented Tests
+    runs-on: macos-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Generate cache key
+        run: ./checksum.sh checksum.txt
+
+      - name: Cache gradle modules
+        uses: actions/cache@v1.1.2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('checksum.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Run instrumented tests
+        uses: reactivecircus/android-emulator-runner@v2.5.0
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck --scan
+
+      - name: Upload build output files
+        if: always()
+        uses: actions/upload-artifact@v1
+        with:
+          name: instrumented-build-outputs
+          path: app/build/outputs
+
+      - name: Upload build report files
+        if: always()
+        uses: actions/upload-artifact@v1
+        with:
+          name: instrumented-build-reports
           path: app/build/reports
