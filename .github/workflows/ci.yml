@@ -36,21 +36,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Build and test debug variant
-        run: ./gradlew assembleDebug bundleDebug testDebug --scan
-
-      - name: Build and test release variant
-        run: ./gradlew assembleRelease bundleRelease testRelease --scan
+      - name: Build and test
+        run: ./gradlew assemble bundle lint test --scan
 
       - name: Run instrumented tests
         if: runner.os == 'macOS'
         uses: reactivecircus/android-emulator-runner@v2.5.0
         with:
           api-level: 29
-          script: ./gradlew connectedCheck
+          script: ./gradlew connectedCheck --scan
 
-      - name: Check code style and lint
-        run: ./gradlew spotlessCheck lint --scan
+      - name: Check code style
+        run: ./gradlew spotlessCheck --scan
 
       - name: Upload build output files
         if: always()
