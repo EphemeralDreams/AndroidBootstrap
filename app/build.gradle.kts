@@ -1,4 +1,5 @@
 import com.ephemeraldreams.Dependencies
+import com.ephemeraldreams.Git
 import com.ephemeraldreams.Versions
 
 plugins {
@@ -19,6 +20,8 @@ android {
         versionName = "0.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         setProperty("archivesBaseName", "${rootProject.name}-$versionName")
+        buildConfigField("String", "GIT_REF", "\"${Git.ref()}\"")
+        buildConfigField("String", "GIT_SHA", "\"${Git.sha()}\"")
     }
     buildTypes {
         getByName("debug") {
