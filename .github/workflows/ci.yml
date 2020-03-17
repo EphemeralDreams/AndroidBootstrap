@@ -12,7 +12,10 @@ jobs:
         uses: gradle/wrapper-validation-action@v1
   build:
     name: Build
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
@@ -39,6 +42,13 @@ jobs:
       - name: Build and test release variant
         run: ./gradlew assembleRelease bundleRelease testRelease --scan
 
+      - name: Run instrumented tests
+        if: runner.os == 'macOS'
+        uses: reactivecircus/android-emulator-runner@v2.5.0
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
+
       - name: Check code style and lint
         run: ./gradlew spotlessCheck lint --scan
 
@@ -46,12 +56,12 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v1
         with:
-          name: build-outputs
+          name: build-outputs-${{ runner.os }}
           path: app/build/outputs
 
       - name: Upload build report files
         if: always()
         uses: actions/upload-artifact@v1
         with:
-          name: build-reports
+          name: build-reports-${{ runner.os }}
           path: app/build/reports
