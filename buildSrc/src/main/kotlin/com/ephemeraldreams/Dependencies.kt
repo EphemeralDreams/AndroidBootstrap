@@ -35,20 +35,20 @@ object Dependencies {
             const val Activity = "androidx.activity:activity-ktx:1.1.0"
             const val Collection = "androidx.collection:collection-ktx:1.1.0"
             const val Core = "androidx.core:core-ktx:1.2.0"
-            const val Fragment = "androidx.fragment:fragment-ktx:1.2.2"
+            const val Fragment = "androidx.fragment:fragment-ktx:1.2.3"
             const val LiveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
             const val Preference = "androidx.preference:preference-ktx:1.1.0"
             const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
         }
 
         object Paging {
-            private const val version = "2.1.1"
+            private const val version = "2.1.2"
             const val RuntimeKtx = "androidx.paging:paging-runtime-ktx:$version"
             const val CommonKtx = "androidx.paging:paging-common-ktx:$version"
         }
 
         object Room {
-            private const val version = "2.2.4"
+            private const val version = "2.2.5"
             const val Runtime = "androidx.room:room-runtime:$version"
             const val KTX = "androidx.room:room-ktx:$version"
             const val Compiler = "androidx.room:room-compiler:$version"
@@ -63,7 +63,7 @@ object Dependencies {
         }
 
         object Work {
-            private const val version = "2.3.3"
+            private const val version = "2.3.4"
             const val RuntimeKtx = "androidx.work:work-runtime-ktx:$version"
             const val Test = "androidx.work:work-testing:$version"
         }
