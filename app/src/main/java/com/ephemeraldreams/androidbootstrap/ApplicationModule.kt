@@ -11,13 +11,13 @@ import javax.inject.Singleton
 @Module(includes = [ApplicationModuleBinders::class])
 object ApplicationModule {
     @Provides @Singleton
-    fun provideContext(application: BootstrapApplication): Context = application.applicationContext
+    fun getContext(application: BootstrapApplication): Context = application.applicationContext
 
-    @Provides @ApplicationId
-    fun provideApplicationId(application: BootstrapApplication): String = application.packageName
+    @Provides @Singleton @ApplicationId
+    fun getApplicationId(application: BootstrapApplication): String = application.packageName
 }
 
 @Module
 abstract class ApplicationModuleBinders {
-    @Binds abstract fun provideApplication(bind: BootstrapApplication): Application
+    @Binds abstract fun getApplication(bind: BootstrapApplication): Application
 }

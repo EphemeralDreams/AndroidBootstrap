@@ -7,6 +7,6 @@ import dagger.android.ContributesAndroidInjector
 
 @Module
 abstract class ActivityModule {
-    @ContributesAndroidInjector abstract fun provideHomeActivity(): HomeActivity
-    @ContributesAndroidInjector abstract fun provideSettingsActivity(): SettingsActivity
+    @ContributesAndroidInjector abstract fun getHomeActivity(): HomeActivity
+    @ContributesAndroidInjector abstract fun getSettingsActivity(): SettingsActivity
 }
