@@ -7,6 +7,7 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
+    jacoco
 }
 
 android {
@@ -26,6 +27,7 @@ android {
     buildTypes {
         getByName("debug") {
             applicationIdSuffix = ".debug"
+            isTestCoverageEnabled = true
         }
         getByName("release") {
             isMinifyEnabled = false
@@ -43,9 +45,54 @@ android {
         isCheckDependencies = true
         isCheckGeneratedSources = true
     }
+    testOptions {
+        animationsDisabled = true
+        unitTests.isIncludeAndroidResources = true
+    }
     viewBinding {
         isEnabled = true
     }
+}
+
+tasks.withType<Test> {
+    configure<JacocoTaskExtension> {
+        isIncludeNoLocationClasses = true
+    }
+}
+task<JacocoReport>("jacocoTestReport") {
+    mustRunAfter("testDebugUnitTest", "createDebugAndroidTestCoverageReport")
+    description = "Create JaCoCo test coverage report from data gathered from unit or " +
+            "instrumentation tests."
+    reports {
+        html.isEnabled = true
+        html.destination = file("${project.buildDir}/reports/jacoco/html")
+    }
+    val fileFilter = mutableSetOf(
+        "android/**/*.*",
+        "**/R.class",
+        "**/R$*.class",
+        "**/BuildConfig.*",
+        "**/Manifest*.*",
+        "**/*Binding.*",
+        "**/*Test*.*"
+    )
+    val debugKotlinFileTree = fileTree("${project.buildDir}/tmp/kotlin-classes/debug") {
+        exclude(fileFilter)
+    }
+    val debugJavaFileTree = fileTree("${project.buildDir}/intermediates/javac/debug") {
+        exclude(fileFilter)
+    }
+    val mainKotlinSrcDir = "${project.projectDir}/src/main/kotlin"
+    val mainJavaSrcDir = "${project.projectDir}/src/main/java"
+
+    sourceDirectories.setFrom(files(mainKotlinSrcDir, mainJavaSrcDir))
+    classDirectories.setFrom(files(debugKotlinFileTree, debugJavaFileTree))
+    executionData.setFrom(fileTree(project.buildDir) {
+        include(
+            "jacoco/testDebugUnitTest.exec",
+            "outputs/code_coverage/debugAndroidTest/connected/*coverage.ec"
+        )
+    })
 }
 
 dependencies {
