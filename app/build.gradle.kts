@@ -74,7 +74,11 @@ task<JacocoReport>("jacocoTestReport") {
         "**/BuildConfig.*",
         "**/Manifest*.*",
         "**/*Binding.*",
-        "**/*Test*.*"
+        "**/*Test*.*",
+        // Dagger generated classes
+        "**/*_MembersInjector.*",
+        "**/Dagger*Component*.*",
+        "**/*Module_*Factory*.*"
     )
     val debugKotlinFileTree = fileTree("${project.buildDir}/tmp/kotlin-classes/debug") {
         exclude(fileFilter)
