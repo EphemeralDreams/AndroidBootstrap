@@ -33,10 +33,22 @@ See this great post where this rule is explained further:
 
 ## Testing
 
-Ensure that for every new pull request that your code has an appropriate set of
-unit tests which all pass. To run tests locally, run:
+Ensure that for every new pull request that your code has an appropriate set of tests which all
+pass.
+
+To run unit tests locally, run:
 ```bash
 $ ./gradlew test
+```
+
+To run instrumentation tests locally, run:
+```bash
+$ ./gradlew connectedCheck
+```
+
+To generate a test coverage report after running unit or instrumentation tests locally, run:
+```bash
+$ ./gradlew jacocoTestReport
 ```
 
 ## Code Style
