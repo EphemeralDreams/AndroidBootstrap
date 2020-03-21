@@ -30,6 +30,7 @@ allprojects {
 }
 tasks.withType<DependencyUpdatesTask> {
     rejectVersionIf { Versions.isNonStable(candidate.version) }
+    gradleReleaseChannel = "current"
 }
 spotless {
     java {
