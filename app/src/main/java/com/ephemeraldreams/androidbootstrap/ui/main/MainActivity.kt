@@ -19,6 +19,7 @@ class MainActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
+        setSupportActionBar(viewBinding.mainToolbar)
 
         navController = findNavController(R.id.mainNavHostFragment)
         val appBarConfiguration = AppBarConfiguration(setOf(
