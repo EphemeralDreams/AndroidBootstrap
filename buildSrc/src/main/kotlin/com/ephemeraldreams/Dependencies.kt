@@ -36,6 +36,12 @@ object Dependencies {
             const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
         }
 
+        object Navigation {
+            private const val version = "2.2.1"
+            const val FragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
+            const val UiKtx = "androidx.navigation:navigation-ui-ktx:$version"
+        }
+
         object Paging {
             private const val version = "2.1.2"
             const val RuntimeKtx = "androidx.paging:paging-runtime-ktx:$version"

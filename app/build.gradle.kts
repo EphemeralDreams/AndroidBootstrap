@@ -130,6 +130,10 @@ dependencies {
     implementation(Dependencies.AndroidX.UI.SwipeRefreshLayout)
     implementation(Dependencies.AndroidX.UI.ViewPager2)
 
+    // AndroidX Navigation library.
+    implementation(Dependencies.AndroidX.Navigation.FragmentKtx)
+    implementation(Dependencies.AndroidX.Navigation.UiKtx)
+
     // AndroidX Paging library.
     implementation(Dependencies.AndroidX.Paging.RuntimeKtx)
     testImplementation(Dependencies.AndroidX.Paging.CommonKtx)
