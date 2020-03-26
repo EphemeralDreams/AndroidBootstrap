@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.ephemeraldreams.androidbootstrap.databinding.FragmentHomeBinding
+import com.google.android.material.snackbar.Snackbar
 import dagger.android.support.DaggerFragment
 
 class HomeFragment : DaggerFragment() {
@@ -22,6 +23,9 @@ class HomeFragment : DaggerFragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             viewBinding.homeTextView.text = it
         })
+        viewBinding.homeFab.setOnClickListener {
+            Snackbar.make(it, "Snacking!", Snackbar.LENGTH_SHORT).show()
+        }
         return viewBinding.root
     }
 }
