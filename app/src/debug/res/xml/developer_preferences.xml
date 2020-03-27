@@ -4,12 +4,8 @@
     android:title="@string/label_settings">
 
     <PreferenceCategory
-        app:key="@string/pref_about_key"
-        app:title="@string/pref_about_title">
-
-        <Preference
-            app:key="@string/pref_version_key"
-            app:title="@string/pref_version_title" />
+        app:key="@string/pref_developer_settings_key"
+        app:title="@string/pref_developer_settings_title">
 
         <Preference
             app:key="@string/pref_version_code_key"
