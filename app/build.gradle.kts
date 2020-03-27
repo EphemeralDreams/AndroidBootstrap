@@ -113,13 +113,14 @@ dependencies {
     // AndroidX core libraries.
     implementation(Dependencies.AndroidX.AppCompat)
     implementation(Dependencies.AndroidX.CommonJava8)
+    implementation(Dependencies.AndroidX.Fragment.Ktx)
+    debugImplementation(Dependencies.AndroidX.Fragment.Testing)
     implementation(Dependencies.AndroidX.ViewModelSavedState)
 
     // AndroidX Kotlin Extension libraries.
     implementation(Dependencies.AndroidX.KTX.Activity)
     implementation(Dependencies.AndroidX.KTX.Collection)
     implementation(Dependencies.AndroidX.KTX.Core)
-    implementation(Dependencies.AndroidX.KTX.Fragment)
     implementation(Dependencies.AndroidX.KTX.LiveData)
     implementation(Dependencies.AndroidX.KTX.Preference)
     implementation(Dependencies.AndroidX.KTX.ViewModel)

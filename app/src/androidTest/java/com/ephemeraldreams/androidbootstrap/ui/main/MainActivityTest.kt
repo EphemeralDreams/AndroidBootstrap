@@ -9,11 +9,13 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.filters.MediumTest
 import com.ephemeraldreams.androidbootstrap.R
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+@MediumTest
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
 
@@ -37,9 +39,5 @@ class MainActivityTest {
         onView(withId(R.id.mainToolbar))
             .check(matches(isDisplayed()))
             .check(matches(hasDescendant(withText(R.string.label_settings))))
-        // No Espresso assertions for AndroidX preferences yet.
-        onView(withId(androidx.preference.R.id.recycler_view))
-            .check(matches(isDisplayed()))
-            .check(matches(hasDescendant(withText(R.string.pref_about_title))))
     }
 }
