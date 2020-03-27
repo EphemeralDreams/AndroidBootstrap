@@ -133,7 +133,7 @@ object Dependencies {
         }
 
         object Retrofit {
-            private const val version = "2.7.2"
+            private const val version = "2.8.1"
             const val Retrofit = "com.squareup.retrofit2:retrofit:$version"
             const val ConverterMoshi = "com.squareup.retrofit2:converter-moshi:$version"
         }
