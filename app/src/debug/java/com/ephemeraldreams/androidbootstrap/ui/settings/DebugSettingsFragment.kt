@@ -8,6 +8,7 @@ class DebugSettingsFragment : SettingsFragment() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         super.onCreatePreferences(savedInstanceState, rootKey)
+        addPreferencesFromResource(R.xml.developer_preferences)
         setPreferenceSummary(R.string.pref_version_code_key, BuildConfig.VERSION_CODE.toString())
         setPreferenceSummary(R.string.pref_git_ref_key, BuildConfig.GIT_REF)
         setPreferenceSummary(R.string.pref_git_sha_key, BuildConfig.GIT_SHA)
