@@ -30,10 +30,15 @@ object Dependencies {
             const val Activity = "androidx.activity:activity-ktx:1.1.0"
             const val Collection = "androidx.collection:collection-ktx:1.1.0"
             const val Core = "androidx.core:core-ktx:1.2.0"
-            const val Fragment = "androidx.fragment:fragment-ktx:1.2.3"
             const val LiveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
             const val Preference = "androidx.preference:preference-ktx:1.1.0"
             const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+        }
+
+        object Fragment {
+            private const val version = "1.2.3"
+            const val Ktx = "androidx.fragment:fragment-ktx:$version"
+            const val Testing = "androidx.fragment:fragment-testing:$version"
         }
 
         object Navigation {
