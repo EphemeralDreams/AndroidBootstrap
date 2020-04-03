@@ -36,7 +36,7 @@ object Dependencies {
         }
 
         object Fragment {
-            private const val version = "1.2.3"
+            private const val version = "1.2.4"
             const val Ktx = "androidx.fragment:fragment-ktx:$version"
             const val Testing = "androidx.fragment:fragment-testing:$version"
         }
