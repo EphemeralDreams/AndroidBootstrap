@@ -31,7 +31,7 @@ object Dependencies {
             const val Collection = "androidx.collection:collection-ktx:1.1.0"
             const val Core = "androidx.core:core-ktx:1.2.0"
             const val LiveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
-            const val Preference = "androidx.preference:preference-ktx:1.1.0"
+            const val Preference = "androidx.preference:preference-ktx:1.1.1"
             const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
         }
 
@@ -42,7 +42,7 @@ object Dependencies {
         }
 
         object Navigation {
-            private const val version = "2.2.1"
+            private const val version = "2.2.2"
             const val FragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
             const val UiKtx = "androidx.navigation:navigation-ui-ktx:$version"
         }
