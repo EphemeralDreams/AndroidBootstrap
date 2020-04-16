@@ -110,20 +110,20 @@ dependencies {
     implementation(Dependencies.Kotlin.Coroutines.Android)
     testImplementation(Dependencies.Kotlin.Coroutines.Test)
 
-    // AndroidX core libraries.
+    // AndroidX core and extension libraries.
+    implementation(Dependencies.AndroidX.Activity)
     implementation(Dependencies.AndroidX.AppCompat)
-    implementation(Dependencies.AndroidX.CommonJava8)
+    implementation(Dependencies.AndroidX.Collection)
+    implementation(Dependencies.AndroidX.Core)
     implementation(Dependencies.AndroidX.Fragment.Ktx)
     debugImplementation(Dependencies.AndroidX.Fragment.Testing)
-    implementation(Dependencies.AndroidX.ViewModelSavedState)
+    implementation(Dependencies.AndroidX.Preference)
 
-    // AndroidX Kotlin Extension libraries.
-    implementation(Dependencies.AndroidX.KTX.Activity)
-    implementation(Dependencies.AndroidX.KTX.Collection)
-    implementation(Dependencies.AndroidX.KTX.Core)
-    implementation(Dependencies.AndroidX.KTX.LiveData)
-    implementation(Dependencies.AndroidX.KTX.Preference)
-    implementation(Dependencies.AndroidX.KTX.ViewModel)
+    // AndroidX Lifecycle libraries.
+    implementation(Dependencies.AndroidX.Lifecycle.CommonJava8)
+    implementation(Dependencies.AndroidX.Lifecycle.LiveData)
+    implementation(Dependencies.AndroidX.Lifecycle.ViewModel)
+    implementation(Dependencies.AndroidX.Lifecycle.ViewModelSavedState)
 
     // AndroidX UI and layout libraries.
     implementation(Dependencies.AndroidX.UI.ConstraintLayout)
