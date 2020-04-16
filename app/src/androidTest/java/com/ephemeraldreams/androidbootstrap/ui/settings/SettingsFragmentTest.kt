@@ -20,7 +20,7 @@ import org.junit.runner.RunWith
 class SettingsFragmentTest {
 
     @Test
-    fun testEventFragment() {
+    fun testSettingsFragmentInitialization() {
         launchFragmentInContainer<SettingsFragment>()
         // No Espresso assertions for AndroidX PreferenceFragmentCompat yet.
         onView(withId(androidx.preference.R.id.recycler_view))
