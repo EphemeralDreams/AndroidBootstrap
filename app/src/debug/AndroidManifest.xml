@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- See https://developer.android.com/studio/build/manifest-merge on merging manifests. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ephemeraldreams.androidbootstrap">
+
+    <application
+        android:name=".DebugBootstrapApplication"
+        tools:replace="android:name" />
+
+</manifest>
