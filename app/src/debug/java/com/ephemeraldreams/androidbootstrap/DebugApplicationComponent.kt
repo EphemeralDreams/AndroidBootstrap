@@ -3,7 +3,7 @@ package com.ephemeraldreams.androidbootstrap
 import com.ephemeraldreams.androidbootstrap.data.DataModule
 import com.ephemeraldreams.androidbootstrap.net.NetworkModule
 import com.ephemeraldreams.androidbootstrap.ui.ActivityModule
-import com.ephemeraldreams.androidbootstrap.ui.FragmentModule
+import com.ephemeraldreams.androidbootstrap.ui.DebugFragmentModule
 import com.ephemeraldreams.androidbootstrap.util.DebugLoggingModule
 import dagger.BindsInstance
 import dagger.Component
@@ -16,7 +16,7 @@ import javax.inject.Singleton
         AndroidInjectionModule::class,
         ApplicationModule::class,
         ActivityModule::class,
-        FragmentModule::class,
+        DebugFragmentModule::class,
         DataModule::class,
         DebugLoggingModule::class,
         NetworkModule::class
