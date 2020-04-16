@@ -23,22 +23,23 @@ object Dependencies {
 
     object AndroidX {
         const val AppCompat = "androidx.appcompat:appcompat:1.1.0"
-        const val CommonJava8 = "androidx.lifecycle:lifecycle-common-java8:2.2.0"
-        const val ViewModelSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
-
-        object KTX {
-            const val Activity = "androidx.activity:activity-ktx:1.1.0"
-            const val Collection = "androidx.collection:collection-ktx:1.1.0"
-            const val Core = "androidx.core:core-ktx:1.2.0"
-            const val LiveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
-            const val Preference = "androidx.preference:preference-ktx:1.1.1"
-            const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-        }
+        const val Activity = "androidx.activity:activity-ktx:1.1.0"
+        const val Collection = "androidx.collection:collection-ktx:1.1.0"
+        const val Core = "androidx.core:core-ktx:1.2.0"
+        const val Preference = "androidx.preference:preference-ktx:1.1.1"
 
         object Fragment {
             private const val version = "1.2.4"
             const val Ktx = "androidx.fragment:fragment-ktx:$version"
             const val Testing = "androidx.fragment:fragment-testing:$version"
+        }
+
+        object Lifecycle {
+            private const val version = "2.2.0"
+            const val CommonJava8 = "androidx.lifecycle:lifecycle-common-java8:$version"
+            const val LiveData = "androidx.lifecycle:lifecycle-livedata-ktx:$version"
+            const val ViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
+            const val ViewModelSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:$version"
         }
 
         object Navigation {
