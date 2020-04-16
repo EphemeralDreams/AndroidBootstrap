@@ -1,16 +1,19 @@
 package com.ephemeraldreams.androidbootstrap
 
+import android.annotation.SuppressLint
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
+import javax.inject.Inject
 import timber.log.Timber
 
-class BootstrapApplication : DaggerApplication() {
+@SuppressLint("Registered")
+open class BootstrapApplication : DaggerApplication() {
+
+    @Inject lateinit var loggingTree: Timber.Tree
 
     override fun onCreate() {
         super.onCreate()
-        if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
-        }
+        Timber.plant(loggingTree)
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
