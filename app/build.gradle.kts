@@ -1,7 +1,3 @@
-import com.ephemeraldreams.Dependencies
-import com.ephemeraldreams.Git
-import com.ephemeraldreams.Versions
-
 plugins {
     id("com.android.application")
     kotlin("android")
