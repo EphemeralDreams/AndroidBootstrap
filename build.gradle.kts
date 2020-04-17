@@ -1,4 +1,3 @@
-import com.ephemeraldreams.Versions
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 // FIXME: The dependencies defined in both buildscript{} and plugins{} blocks are hard-coded since
