@@ -1,5 +1,3 @@
-import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
-
 // FIXME: The dependencies defined in both buildscript{} and plugins{} blocks are hard-coded since
 //  we cannot import dependencies or versions from buildSrc due to a bug in Kotlin DSL. More details
 //  can be found at https://github.com/gradle/gradle/issues/9270
@@ -18,7 +16,7 @@ buildscript {
 }
 plugins {
     id("code-style")
-    id("com.github.ben-manes.versions") version "0.28.0"
+    id("report.dependency-updates")
 }
 allprojects {
     repositories {
@@ -26,8 +24,4 @@ allprojects {
         jcenter()
         mavenCentral()
     }
-}
-tasks.withType<DependencyUpdatesTask> {
-    rejectVersionIf { Versions.isNonStable(candidate.version) }
-    gradleReleaseChannel = "current"
 }
