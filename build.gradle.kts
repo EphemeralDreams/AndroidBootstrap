@@ -17,7 +17,7 @@ buildscript {
     }
 }
 plugins {
-    id("com.diffplug.gradle.spotless") version "3.28.1"
+    id("code-style")
     id("com.github.ben-manes.versions") version "0.28.0"
 }
 allprojects {
@@ -30,21 +30,4 @@ allprojects {
 tasks.withType<DependencyUpdatesTask> {
     rejectVersionIf { Versions.isNonStable(candidate.version) }
     gradleReleaseChannel = "current"
-}
-spotless {
-    java {
-        target("**/*.java")
-        targetExclude("**/build/**")
-        googleJavaFormat(Versions.googleJavaFormat)
-    }
-    kotlin {
-        target("**/*.kt")
-        targetExclude("**/build/**")
-        ktlint(Versions.klint)
-    }
-    kotlinGradle {
-        target("**/*.kts")
-        targetExclude("**/build/**")
-        ktlint(Versions.klint)
-    }
 }
