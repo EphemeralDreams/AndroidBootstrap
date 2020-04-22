@@ -1,6 +1,6 @@
 ---
 name: Maintenance
-about: Create an issue for refactoring, performance, or general maintenance. 
+about: Create an issue for refactoring, performance, or general maintenance.
 title: ''
 labels: maintenance
 assignees: ''
