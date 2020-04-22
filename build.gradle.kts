@@ -32,6 +32,25 @@ tasks.withType<DependencyUpdatesTask> {
     gradleReleaseChannel = "current"
 }
 spotless {
+    format("misc") {
+        target(
+            // Data serialization files.
+            "**/*.json",
+            "**/*.yaml",
+            "**/*.xml",
+            // Plain text files.
+            "**/*.md",
+            "**/*.txt",
+            // Configuration files.
+            "**/.gitignore",
+            "**/*.pro",
+            "**/*.properties"
+        )
+        targetExclude("**/build/**", "**/.idea/**", "**/.gradle/**")
+        indentWithSpaces()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
     java {
         target("**/*.java")
         targetExclude("**/build/**")
