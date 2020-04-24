@@ -121,6 +121,12 @@ object Dependencies {
     object Square {
         const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:2.2"
 
+        object AssistedInject {
+            private const val version = "0.5.2"
+            const val Annotations = "com.squareup.inject:assisted-inject-annotations-dagger2:$version"
+            const val Processor = "com.squareup.inject:assisted-inject-processor-dagger2:$version"
+        }
+
         object Moshi {
             private const val version = "1.9.2"
             const val Moshi = "com.squareup.moshi:moshi:$version"

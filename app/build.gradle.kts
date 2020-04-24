@@ -105,6 +105,8 @@ dependencies {
     implementation(Dependencies.Google.Dagger.AndroidSupport)
     kapt(Dependencies.Google.Dagger.Compiler)
     kapt(Dependencies.Google.Dagger.AndroidProcessor)
+    compileOnly(Dependencies.Square.AssistedInject.Annotations)
+    kapt(Dependencies.Square.AssistedInject.Processor)
 
     // Moshi JSON library.
     implementation(Dependencies.Square.Moshi.Moshi)
