@@ -3,12 +3,16 @@ package com.ephemeraldreams.androidbootstrap
 import android.app.Application
 import android.content.Context
 import com.ephemeraldreams.androidbootstrap.annotations.ApplicationId
+import com.ephemeraldreams.androidbootstrap.ui.ViewModelModule
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-@Module(includes = [ApplicationModuleBinders::class])
+@Module(includes = [
+    ApplicationModuleBinders::class,
+    ViewModelModule::class
+])
 object ApplicationModule {
     @Provides @Singleton
     fun getContext(application: BootstrapApplication): Context = application.applicationContext
