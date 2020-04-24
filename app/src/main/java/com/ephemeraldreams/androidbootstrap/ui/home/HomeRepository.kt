@@ -5,4 +5,4 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class HomeRepository @Inject constructor(@ApplicationId val applicationId : String)
+class HomeRepository @Inject constructor(@ApplicationId val applicationId: String)
