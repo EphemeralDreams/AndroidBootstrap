@@ -111,7 +111,7 @@ object Dependencies {
         const val TestJunit = "test-junit"
 
         object Coroutines {
-            private const val version = "1.3.5"
+            private const val version = "1.3.7"
             const val Core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
             const val Android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
             const val Test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
@@ -119,7 +119,7 @@ object Dependencies {
     }
 
     object Square {
-        const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:2.2"
+        const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:2.3"
 
         object AssistedInject {
             private const val version = "0.5.2"
@@ -135,7 +135,7 @@ object Dependencies {
         }
 
         object OkHttp {
-            private const val version = "4.5.0"
+            private const val version = "4.7.2"
             const val Bom = "com.squareup.okhttp3:okhttp-bom:$version"
             const val OkHttp = "com.squareup.okhttp3:okhttp"
             const val LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor"
@@ -143,7 +143,7 @@ object Dependencies {
         }
 
         object Retrofit {
-            private const val version = "2.8.1"
+            private const val version = "2.9.0"
             const val Retrofit = "com.squareup.retrofit2:retrofit:$version"
             const val ConverterMoshi = "com.squareup.retrofit2:converter-moshi:$version"
         }
