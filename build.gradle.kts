@@ -17,7 +17,7 @@ buildscript {
     }
 }
 plugins {
-    id("com.diffplug.gradle.spotless") version "3.28.1"
+    id("com.diffplug.gradle.spotless") version "4.0.0"
     id("com.github.ben-manes.versions") version "0.28.0"
 }
 allprojects {
