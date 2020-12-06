@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    kotlin("android.extensions")
     kotlin("kapt")
     id("report.jacoco")
 }
@@ -30,6 +29,9 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+    buildFeatures {
+        viewBinding = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -44,9 +46,6 @@ android {
     testOptions {
         animationsDisabled = true
         unitTests.isIncludeAndroidResources = true
-    }
-    viewBinding {
-        isEnabled = true
     }
 }
 

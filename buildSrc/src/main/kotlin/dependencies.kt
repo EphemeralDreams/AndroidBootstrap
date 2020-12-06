@@ -20,14 +20,14 @@ object Versions {
 object Dependencies {
 
     object AndroidX {
-        const val AppCompat = "androidx.appcompat:appcompat:1.1.0"
+        const val AppCompat = "androidx.appcompat:appcompat:1.2.0"
         const val Activity = "androidx.activity:activity-ktx:1.1.0"
         const val Collection = "androidx.collection:collection-ktx:1.1.0"
-        const val Core = "androidx.core:core-ktx:1.2.0"
+        const val Core = "androidx.core:core-ktx:1.3.2"
         const val Preference = "androidx.preference:preference-ktx:1.1.1"
 
         object Fragment {
-            private const val version = "1.2.4"
+            private const val version = "1.2.5"
             const val Ktx = "androidx.fragment:fragment-ktx:$version"
             const val Testing = "androidx.fragment:fragment-testing:$version"
         }
@@ -41,7 +41,7 @@ object Dependencies {
         }
 
         object Navigation {
-            private const val version = "2.2.2"
+            private const val version = "2.3.2"
             const val FragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
             const val UiKtx = "androidx.navigation:navigation-ui-ktx:$version"
         }
@@ -61,26 +61,26 @@ object Dependencies {
         }
 
         object UI {
-            const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
-            const val Material = "com.google.android.material:material:1.1.0"
-            const val SwipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+            const val ConstraintLayout = "androidx.constraintlayout:constraintlayout:2.0.4"
+            const val Material = "com.google.android.material:material:1.2.1"
+            const val SwipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
             const val ViewPager2 = "androidx.viewpager2:viewpager2:1.0.0"
         }
 
         object Work {
-            private const val version = "2.3.4"
+            private const val version = "2.4.0"
             const val RuntimeKtx = "androidx.work:work-runtime-ktx:$version"
             const val Test = "androidx.work:work-testing:$version"
         }
 
         object Test {
-            const val Junit = "androidx.test.ext:junit:1.1.1"
-            const val Rules = "androidx.test:rules:1.2.0"
-            const val Runner = "androidx.test:runner:1.2.0"
-            const val Truth = "androidx.test.ext:truth:1.2.0"
+            const val Junit = "androidx.test.ext:junit:1.1.2"
+            const val Rules = "androidx.test:rules:1.3.0"
+            const val Runner = "androidx.test:runner:1.3.0"
+            const val Truth = "androidx.test.ext:truth:1.3.0"
 
             object Espresso {
-                private const val version = "3.2.0"
+                private const val version = "3.3.0"
                 const val Accessibility = "androidx.test.espresso:espresso-accessibility:$version"
                 const val Contrib = "androidx.test.espresso:espresso-contrib:$version"
                 const val Core = "androidx.test.espresso:espresso-core:$version"
@@ -93,17 +93,17 @@ object Dependencies {
 
     object Google {
         object Dagger {
-            private const val version = "2.27"
+            private const val version = "2.30.1"
             const val Dagger = "com.google.dagger:dagger:$version"
             const val Compiler = "com.google.dagger:dagger-compiler:$version"
             const val AndroidSupport = "com.google.dagger:dagger-android-support:$version"
             const val AndroidProcessor = "com.google.dagger:dagger-android-processor:$version"
         }
 
-        const val Truth = "com.google.truth:truth:1.0.1"
+        const val Truth = "com.google.truth:truth:1.1"
     }
 
-    const val Junit = "junit:junit:4.13"
+    const val Junit = "junit:junit:4.13.1"
 
     object Kotlin {
         const val StdlibJDK8 = "stdlib-jdk8"
@@ -111,7 +111,7 @@ object Dependencies {
         const val TestJunit = "test-junit"
 
         object Coroutines {
-            private const val version = "1.3.7"
+            private const val version = "1.4.2"
             const val Core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
             const val Android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
             const val Test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
@@ -119,23 +119,23 @@ object Dependencies {
     }
 
     object Square {
-        const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:2.3"
+        const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:2.5"
 
         object AssistedInject {
-            private const val version = "0.5.2"
+            private const val version = "0.6.0"
             const val Annotations = "com.squareup.inject:assisted-inject-annotations-dagger2:$version"
             const val Processor = "com.squareup.inject:assisted-inject-processor-dagger2:$version"
         }
 
         object Moshi {
-            private const val version = "1.9.2"
+            private const val version = "1.11.0"
             const val Moshi = "com.squareup.moshi:moshi:$version"
             const val MoshiKotlin = "com.squareup.moshi:moshi-kotlin:$version"
             const val MoshiKotlinCodegen = "com.squareup.moshi:moshi-kotlin-codegen:$version"
         }
 
         object OkHttp {
-            private const val version = "4.7.2"
+            private const val version = "4.9.0"
             const val Bom = "com.squareup.okhttp3:okhttp-bom:$version"
             const val OkHttp = "com.squareup.okhttp3:okhttp"
             const val LoggingInterceptor = "com.squareup.okhttp3:logging-interceptor"
